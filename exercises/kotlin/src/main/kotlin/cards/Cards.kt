@@ -1,6 +1,6 @@
 package cards
 
-class PlayingCard (val suit: Int, val faceValue: Int) {
+class PlayingCard (val suit: Suit, val faceValue: Int) {
 }
 
 class Cards {
@@ -9,10 +9,9 @@ class Cards {
             val result = MutableList(52) {""}
 //            val deck = Array<PlayingCard?>(52) {null}
             val deck = arrayListOf<PlayingCard>()
-            for (suit in 0..3) {
+            for (Suit in Suit.values()) {
                 for (faceValue in 0..12) {
-                    deck.add(suit * 13 + faceValue, PlayingCard(suit, faceValue))
-//                    deck[suit * 13 + faceValue] = PlayingCard(suit, faceValue)
+                    deck.add(PlayingCard(Suit, faceValue))
                 }
             }
             for ((cardNumber, card) in deck.withIndex()) {
@@ -24,14 +23,8 @@ class Cards {
                     12 -> "king"
                     else -> throw IllegalArgumentException("Something went wrong " + card.faceValue + "is not a valid faceValue!")
                 }
-                val suitName: String = when (card.suit) {
-                    0 -> "clubs"
-                    1 -> "diamonds"
-                    2 -> "hearts"
-                    3 -> "spades"
-                    else -> throw IllegalArgumentException("Something went wrong " + card.suit + "is not a valid suitName!")
-                }
-                result[cardNumber] = "$faceValueName of $suitName"
+
+                result[cardNumber] = "$faceValueName of ${card.suit.cardName}"
             }
             return result
         }
