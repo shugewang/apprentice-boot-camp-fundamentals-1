@@ -7,20 +7,22 @@ class Cards {
     val cards: MutableList<String>
         get() {
             val result = MutableList(52) {""}
-            val deck = Array<PlayingCard?>(52) {null}
+//            val deck = Array<PlayingCard?>(52) {null}
+            val deck = arrayListOf<PlayingCard>()
             for (suit in 0..3) {
                 for (faceValue in 0..12) {
-                    deck[suit * 13 + faceValue] = PlayingCard(suit, faceValue)
+                    deck.add(suit * 13 + faceValue, PlayingCard(suit, faceValue))
+//                    deck[suit * 13 + faceValue] = PlayingCard(suit, faceValue)
                 }
             }
             for ((cardNumber, card) in deck.withIndex()) {
-                val faceValueName: String = when (card?.faceValue) {
+                val faceValueName: String = when (card.faceValue) {
                     0 -> "ace"
                     1, 2, 3, 4, 5, 6, 7, 8, 9 -> (card.faceValue + 1).toString()
                     10 -> "jack"
                     11 -> "queen"
                     12 -> "king"
-                    else -> throw IllegalArgumentException("Something went wrong " + card?.faceValue + "is not a valid faceValue!")
+                    else -> throw IllegalArgumentException("Something went wrong " + card.faceValue + "is not a valid faceValue!")
                 }
                 val suitName: String = when (card.suit) {
                     0 -> "clubs"
