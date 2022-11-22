@@ -1,6 +1,6 @@
 package cards
 
-internal class AnimalDeck {
+internal class AnimalDeck: Deck {
     private val cards: MutableList<AnimalCard?>
 
     init {
@@ -11,11 +11,11 @@ internal class AnimalDeck {
         }
     }
 
-    fun shuffle() {
+    override fun shuffle() {
         cards.shuffle()
     }
 
-    fun getCards(): MutableList<String> {
+    override fun getCards(): MutableList<String> {
         val result = mutableListOf<String>()
         for (i in cards.indices) {
             val card = cards[i]
@@ -24,7 +24,7 @@ internal class AnimalDeck {
         return result
     }
 
-    fun deal(): AnimalCard? {
+    override fun deal(): AnimalCard? {
         return cards.removeAt(0)
     }
 }

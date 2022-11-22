@@ -2,7 +2,7 @@ package cards
 
 import java.util.*
 
-internal class Snap(private val deck: AnimalDeck) {
+internal class Snap(private val deck: Deck) {
     private var player1Score = 0
     private var player2Score = 0
 
