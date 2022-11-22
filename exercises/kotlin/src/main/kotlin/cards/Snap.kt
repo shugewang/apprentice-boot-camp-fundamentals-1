@@ -12,7 +12,7 @@ internal class Snap(private val deck: AnimalDeck) {
 
     fun play() {
         val scanner = Scanner(System.`in`)
-        var previousCard: AnimalCard? = null
+        var previousCard: Card? = null
         while (deck.getCards().isNotEmpty()) {
             val currentCard = deck.deal()
             println(currentCard)
