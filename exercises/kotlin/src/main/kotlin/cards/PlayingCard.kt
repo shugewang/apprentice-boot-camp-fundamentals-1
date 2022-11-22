@@ -1,6 +1,6 @@
 package cards
 
-class PlayingCard (val suit: Suit, val faceValue: Int): Card {
+class PlayingCard (val suit: Suit, val faceValue: Int): Card() {
     override fun snap(otherCard: Card?): Boolean {
         otherCard as PlayingCard?
         return (otherCard != null) && faceValue == otherCard.faceValue

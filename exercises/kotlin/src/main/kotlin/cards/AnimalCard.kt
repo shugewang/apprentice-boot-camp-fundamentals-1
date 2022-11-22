@@ -1,6 +1,6 @@
 package cards
 
-class AnimalCard(private val animal: Animal): Card{
+class AnimalCard(private val animal: Animal): Card() {
 
 
     override fun snap(otherCard: Card?): Boolean {

@@ -1,6 +1,6 @@
 package cards
 
-interface Card {
-    fun snap(otherCard: Card?): Boolean
-    override fun toString(): String
+ abstract class Card {
+    abstract fun snap(otherCard: Card?): Boolean
+    abstract override fun toString(): String
 }

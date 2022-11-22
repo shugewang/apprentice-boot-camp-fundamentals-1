@@ -1,6 +1,6 @@
 package cards
 
-class PlayingCardDeck(val deck: ArrayList<PlayingCard> = arrayListOf()): Deck{
+class PlayingCardDeck(val deck: ArrayList<PlayingCard> = arrayListOf()): Deck(){
     init {
         for (suit in Suit.values()) {
             for (faceValue in 0..12) {

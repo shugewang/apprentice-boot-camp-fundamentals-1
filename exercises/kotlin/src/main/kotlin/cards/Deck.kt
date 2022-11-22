@@ -1,10 +1,10 @@
 package cards
 
-interface Deck {
-    fun shuffle()
+abstract class Deck {
+    abstract fun shuffle()
 
-    fun getCards(): MutableList<String>
+    abstract fun getCards(): MutableList<String>
 
-    fun deal(): Card?
+    abstract fun deal(): Card?
 
 }

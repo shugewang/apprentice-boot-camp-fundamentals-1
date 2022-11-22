@@ -1,6 +1,6 @@
 package cards
 
-internal class AnimalDeck: Deck {
+internal class AnimalDeck: Deck() {
     private val cards: MutableList<AnimalCard?>
 
     init {
