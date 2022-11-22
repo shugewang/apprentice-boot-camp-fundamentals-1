@@ -47,7 +47,7 @@ internal class Snap(private val deck: Deck) {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val snap = Snap(PlayingCardDeck())
+            val snap = Snap(MixedDeck(AnimalDeck(), PlayingCardDeck()))
             snap.play()
         }
     }

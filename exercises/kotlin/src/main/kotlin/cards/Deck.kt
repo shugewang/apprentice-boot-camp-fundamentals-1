@@ -1,10 +1,21 @@
 package cards
 
-abstract class Deck {
-    abstract fun shuffle()
+open class Deck(private val deck: ArrayList<Card>){
+    fun shuffle() {
+        deck.shuffle()
+    }
 
-    abstract fun getCards(): MutableList<String>
+    fun getCards(): MutableList<String> {
+        val result = mutableListOf<String>()
+        for (i in deck.indices) {
+            val deck = deck[i]
+            result.add(deck.toString())
+        }
+        return result
+    }
 
-    abstract fun deal(): Card?
+    fun deal(): Card? {
+        return deck.removeAt(0)
+    }
 
 }
